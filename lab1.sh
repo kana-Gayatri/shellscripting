@@ -11,4 +11,5 @@ echo -e "line1\n line2"
 echo -e "\e[31m Red Color code is 31"
 echo -e "\e[32m Green colour code is 32"
 echo -e "\e[33m Yellow color code is 33\e[0m"
-echo 34 is b for blue 35 is meganta and 36 is for cyan
+#echo 34 is b for blue 35 is meganta and 36 is for cyan
+echo end of script
