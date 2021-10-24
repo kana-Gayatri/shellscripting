@@ -4,18 +4,17 @@ Print() {
   echo -e "\e[1m $1 \e[0m"
   echo  -e  "\e[1m =====================$1=============================\e[0m"
 }
-LOG = /tmp/roboshop.log
-rm -f $LOG
+LOG=/tmp/roboshop.log
+rm -f  $LOG
 
 Print  "Installing Nginx"
- yum install nginx -y & >>$LOG
+ yum install nginx -y &  >> $LOG
 
  Print  "Enabeling Nginx"
   systemctl enable nginx
 
- echo  -e  "\e[32m Starting Nginx\e[0m"
+ Print  " Starting Nginx"
  systemctl start nginx
-
 exit
  curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 
