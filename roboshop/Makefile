@@ -25,7 +25,8 @@ mysql: #### Setup mysql Component
 redis: #### Setup redis Component
 	@bash	Components/redis.sh
 
-rabbitmq: #### Setup rabbitmq
+rabbitmq: #### Setup rabbitmq Component
 	@bash	Compnents/rabbitmq.sh
 
-mongodb:
+mongodb: #### Setup mongodb component
+	@bash Components/mongodb.sh
