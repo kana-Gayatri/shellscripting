@@ -4,6 +4,15 @@ Print() {
   echo -e "\e[1m $1 \e[0m"
   echo  -e  "\e[1m =====================$1=============================\e[0m"
 }
+
+Stat(){
+  if [$1 -eq 0]
+  then
+    echo  -e "\e[1;32m SUCCESS\e[0m"
+    else
+      echo  -e "\e[1;31m FAIL\e[0m"
+      fi
+}
 LOG=/tmp/roboshop.log
 rm -f  $LOG
 Print  "Installing Nginx"
