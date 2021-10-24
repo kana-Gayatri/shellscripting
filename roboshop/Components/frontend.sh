@@ -4,7 +4,7 @@ Print() {
   echo -e "\e[1m $1 \e[0m"
   echo  -e  "\e[1m =====================$1=============================\e[0m"
 }
-LOG= /tmp/roboshop.log
+LOG=/tmp/roboshop.log
 rm -f  $LOG
 Print  "Installing Nginx"
  yum install nginx -y &>> $LOG
