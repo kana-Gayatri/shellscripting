@@ -7,6 +7,7 @@ echo  -e  "\e[1m Installing Nginx\e[0m"
 
  echo  -e  "\e[1m Starting Nginx\e[0m"
  systemctl start nginx
+
 exit
  curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 
