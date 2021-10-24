@@ -6,7 +6,6 @@ Print() {
 }
 LOG= /tmp/roboshop.log
 rm -f  $LOG
-
 Print  "Installing Nginx"
  yum install nginx -y &>> $LOG
 
