@@ -1,11 +1,11 @@
 #!bin/bash
-echo  -e  "\e[1m Installing Nginx\e[0m"
+echo  -e  "\e[32m Installing Nginx\e[0m"
  yum install nginx -y
 
- echo  -e  "\e[31m Enabeling Nginx\e[0m"
+ echo  -e  "\e[32m Enabeling Nginx\e[0m"
   systemctl enable nginx
 
- echo  -e  "\e[31m Starting Nginx\e[0m"
+ echo  -e  "\e[32m Starting Nginx\e[0m"
  systemctl start nginx
 
 exit
