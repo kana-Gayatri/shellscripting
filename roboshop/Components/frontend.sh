@@ -11,6 +11,7 @@ Stat(){
     echo  -e "\e[1;32m SUCCESS\e[0m"
     else
       echo  -e "\e[1;31m FAIL\e[0m"
+      echo -e " \e [1;33mScript failed  Check for the details in $LOG file\e[0m "
       fi
 }
 LOG=/tmp/roboshop.log
