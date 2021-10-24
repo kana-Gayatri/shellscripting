@@ -1,8 +1,16 @@
 #!bin/bash
-echo  -e  "\e[32m Installing Nginx\e[0m"
- yum install nginx -y
 
- echo  -e  "\e[32m Enabeling Nginx\e[0m"
+Print() {
+  echo -e "\e[1m $1 \e[0m"
+  echo  -e  "\e[1m =====================$1=============================\e[0m"
+}
+LOG = /tmp/roboshop.log
+rm -f $LOG
+
+Print  "Installing Nginx"
+ yum install nginx -y & >>$LOG
+
+ Print  "Enabeling Nginx"
   systemctl enable nginx
 
  echo  -e  "\e[32m Starting Nginx\e[0m"
