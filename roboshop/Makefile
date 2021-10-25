@@ -16,33 +16,32 @@ git-pull:
 	#@echo -------+ Pulling Git Code +--------
 	#@git pull &>/dev/null
 
-cart:  git-pull## Setup Cart Component
-	#cart: git-pull ## Setup Cart Component
-	@bash Components/cat.sh
+cart: git-pull ## Setup Cart Component
+	@sudo bash components/cart.sh
 
 catalogue: git-pull ## Setup Catalogue component
-	@bash Components/catalogue.sh
+	@sudo bash Components/catalogue.sh
 
 user:  git-pull ## Setup User component
-	@bash Components/user.sh
+	@sudo bash Components/user.sh
 
 shipping:  git-pull ## Setup Shipping Component
-	@bash Components/shipping.sh
+	@sudo bash Components/shipping.sh
 
 payment:  git-pull ## Setup Payment Component
-	@bash Components/payment.sh
+	@sudo bash Components/payment.sh
 
 frontend:  git-pull ## Setup frontend Component
-	@bash	Components/frontend.sh
+	@sudo bash	Components/frontend.sh
 
 mysql:  git-pull ## Setup mysql Component
-	@bash Components/mysql.sh
+	@sudo bash Components/mysql.sh
 
 redis:  git-pull ## Setup redis Component
-	@bash	Components/redis.sh
+	@sudo bash	Components/redis.sh
 
 rabbitmq:  git-pull ## Setup rabbitmq Component
-	@bash	Compnents/rabbitmq.sh
+	@sudo bash	Compnents/rabbitmq.sh
 
 mongodb: git-pull ## Setup mongodb component
-	@bash Components/mongodb.sh
+	@sudo bash Components/mongodb.sh
