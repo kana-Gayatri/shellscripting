@@ -10,7 +10,7 @@ Print  "Installing Nginx"
   systemctl enable nginx &>> $LOG
 Stat  $?
 
- Print  " Starting Nginx"
+ Print  "Starting Nginx"
  systemctl start nginx &>> $LOG
 Stat  $?
 
