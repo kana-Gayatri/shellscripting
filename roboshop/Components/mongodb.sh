@@ -1,8 +1,8 @@
 #!bin/bash
 
 source  Components/common.sh
-
  curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo
+exit
 #Install Mongo & Start Service.
 # yum install -y mongodb-org
 # systemctl enable mongod
