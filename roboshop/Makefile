@@ -9,15 +9,11 @@ help:
             printf "%-15s %s\n" $$help_command $$help_info ; \
         done
 
-#git-pull:
-#	@echo -----------------------++  	Pulling Git Code		++------------------------------------
-#	@git pull  &>/dev/null
-
 git-pull:
 	@echo -------+      Pulling Git Code      +--------
 	@git pull &>/dev/null
 
-cart: git-pull## Setup Cart Component
+cart: ## Setup Cart Component
 	@sudo bash Components/cart.sh
 
 catalogue: git-pull# Setup Catalogue component
