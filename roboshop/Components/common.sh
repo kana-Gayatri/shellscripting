@@ -15,6 +15,6 @@ Print() {
           exit 1
         fi
       }
-}
+
 LOG=/tmp/roboshop.log
 rm -f  $LOG
