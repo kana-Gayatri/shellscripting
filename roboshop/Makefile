@@ -17,10 +17,10 @@ git-pull:
 	@echo -------+      Pulling Git Code      +--------
 	@git pull &>/dev/null
 
-cart: git-pull ## Setup Cart Component
+cart: git-pull## Setup Cart Component
 	@sudo bash Components/cart.sh
 
-catalogue: git-pull ## Setup Catalogue component
+catalogue: git-pull# Setup Catalogue component
 	@sudo bash Components/catalogue.sh
 
 user:  git-pull ## Setup User component
