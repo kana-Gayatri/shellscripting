@@ -7,11 +7,11 @@ Print  "Installing Nginx"
  Stat $?
 
  Print  "Enabeling Nginx"
-  systemctl enable nginx
+  systemctl enable nginx &>> $LOG
 Stat  $?
 
  Print  " Starting Nginx"
- systemctl start nginx
+ systemctl start nginx &>> $LOG
 Stat  $?
 exit
  curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
