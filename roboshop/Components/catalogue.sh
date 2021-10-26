@@ -24,7 +24,7 @@ rm -rf /home/roboshop/catalogue >>$LOG
 Stat $?
 #$ cd /home/roboshop
 Print "Extracting the Catalogue"
- unzip  -o -d /home/roboshop /tmp/catalogue.zip >>$LOG
+ unzip -s  -o -d /home/roboshop /tmp/catalogue.zip >>$LOG
 
  Print "Moving main Content "
  mv  /home/roboshop/catalogue-main  /home/roboshop/catalogue  >>$LOG
@@ -36,7 +36,7 @@ Print "install Dependencies"
  Stat $?
 
  Print "App Permissions "
- chown -R roboshop  :  roboshop /home/roboshop
+ chown -R roboshop:roboshop /home/roboshop
  Stat $?
 
 #NOTE: We need to update the IP address of MONGODB Server in systemd.service file
