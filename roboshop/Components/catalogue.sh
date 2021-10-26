@@ -30,8 +30,8 @@ Print "Extracting the Catalogue"
  mv  /home/roboshop catalogue-main  /home/roboshop/catalogue>>$LOG
  Stat $?
 
-#$ cd /home/roboshop/catalogue
 Print "install Dependencies"
+ cd /home/roboshop/catalogue
  npm  --unsafe-perm install>>$LOG
  Stat $?
 #NOTE: We need to update the IP address of MONGODB Server in systemd.service file
