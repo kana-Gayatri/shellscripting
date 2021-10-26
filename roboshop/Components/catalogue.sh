@@ -27,7 +27,7 @@ Print "Extracting the Catalogue"
  unzip  -o -d /home/roboshop /tmp/catalogue.zip >>$LOG
 
  Print "Moving main Content "
- mv  /home/roboshop catalogue-main  /home/roboshop/catalogue>>$LOG
+ mv  /home/roboshop/catalogue-main  /home/roboshop/catalogue >>$LOG
  Stat $?
 
 Print "install Dependencies"
