@@ -23,11 +23,11 @@ Print "Remove  Old Content"
 rm -rf /home/roboshop/catalogue >>$LOG
 Stat $?
 #$ cd /home/roboshop
-Print "Extracting the Catalogue"
- unzip -s  -o -d /home/roboshop /tmp/catalogue.zip >>$LOG
+Print "Extracting  Catalogue"
+ unzip -s  -o -d /home/roboshop  /tmp/catalogue.zip >>$LOG
 
  Print "Moving main Content "
- mv  /home/roboshop/catalogue-main  /home/roboshop/catalogue  >>$LOG
+ mv  /home/roboshop/catalogue-main  /home/roboshop/catalogue >>$LOG
  Stat $?
 
 Print "install Dependencies"
