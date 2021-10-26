@@ -5,19 +5,26 @@ source  Components/common.sh
 Print "Installing NodeJS "
  yum install nodejs make gcc-c++ -y >>$LOG
  Stat $?
-#Let's now set up the catalogue application.
-
-#As part of operating system standards, we run all the applications and databases as a normal user but not with root user.
-
-#So to run the catalogue service we choose to run as a normal user and that user name should be more relevant to the project. Hence we will use roboshop as the username to run the service.
 
 Print "Adding a User"
- useradd roboshop
-#So let's switch to the roboshop user and run the following commands.
+id roboshop >>$LOG
+if [$? -eq 0 ]
+  then
+      echo "User already exists"
+  else
+    useradd roboshop >>$LOG
+ fi
 
-#$ curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
+Print "Downloading Catalogue"
+ curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" >>$LOG
+Stat $?
+
+Print "Remove  Old Content"
+rm -rf /home/roboshop/catalogue >>$LOG
+Stat $?
 #$ cd /home/roboshop
-#$ unzip /tmp/catalogue.zip
+Print "Extracting the Catalogue"
+ unzip  -o -d /home/roboshop /tmp/catalogue.zip >>$LOG
 #$ mv catalogue-main catalogue
 #$ cd /home/roboshop/catalogue
 #$ npm install
