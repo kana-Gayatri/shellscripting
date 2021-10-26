@@ -25,9 +25,15 @@ Stat $?
 #$ cd /home/roboshop
 Print "Extracting the Catalogue"
  unzip  -o -d /home/roboshop /tmp/catalogue.zip >>$LOG
-#$ mv catalogue-main catalogue
+
+ Print "Moving main Content "
+ mv  /home/roboshop catalogue-main  /home/roboshop/catalogue>>$LOG
+ Stat $?
+
 #$ cd /home/roboshop/catalogue
-#$ npm install
+Print "install Dependencies"
+ npm  --unsafe-perm install>>$LOG
+ Stat $?
 #NOTE: We need to update the IP address of MONGODB Server in systemd.service file
 #Now, lets set up the service with systemctl.
 
