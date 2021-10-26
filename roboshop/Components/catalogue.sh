@@ -10,7 +10,7 @@ Print "Adding a User"
 id roboshop >>$LOG
 if [ $? -eq 0 ]
   then
-      echo "User already exists"
+      echo "User already exists">>$LOG
   else
     useradd roboshop >>$LOG
  fi
@@ -22,7 +22,7 @@ Stat $?
 Print "Remove  Old Content"
 rm -rf /home/roboshop/catalogue >>$LOG
 Stat $?
-#$ cd /home/roboshop
+
 Print "Extracting  Catalogue"
  unzip -s  -o -d /home/roboshop  /tmp/catalogue.zip >>$LOG
 
@@ -31,7 +31,7 @@ Print "Extracting  Catalogue"
  Stat $?
 
 Print "install Dependencies"
- cd /home/roboshop/catalogue
+ cd  /home/roboshop/catalogue
  npm  --unsafe-perm install >>$LOG
  Stat $?
 
