@@ -36,7 +36,7 @@ Print "install Dependencies"
  Stat $?
 
  Print "App Permissions "
- chown -R roboshop : roboshop /home/roboshop
+ chown -R roboshop  :  roboshop /home/roboshop
  Stat $?
 
 #NOTE: We need to update the IP address of MONGODB Server in systemd.service file
