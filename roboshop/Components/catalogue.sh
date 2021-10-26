@@ -8,14 +8,14 @@ Print "Installing NodeJS "
 
 Print "Adding a User"
 id roboshop >>$LOG
-if [$? -eq 0 ]
+if [ $? -eq 0 ]
   then
       echo "User already exists"
   else
     useradd roboshop >>$LOG
  fi
 
-Print "Downloading Catalogue"
+Print "Downloading Catalogue "
  curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" >>$LOG
 Stat $?
 
