@@ -26,6 +26,8 @@ Print  "Downloadi  MongoDB"
   #if [ "$1" == "/home/roboshop" ]; then
 
     Print "Copy Content"
+     rm -rf /home/roboshop/mongodb &>>$LOG
+     cd mongodb-main
     mv  /home/roboshop/mongodb-main /home/roboshop/mongdb &>>$LOG
     #mv /home/roboshop/${COMPONENT}-main /home/roboshop/${COMPONENT}
     Stat $?
