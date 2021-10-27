@@ -20,7 +20,7 @@ Print  "Downloadi  MongoDB"
 
   Print "Extract MongoDB Content"
    # unzip mongodb.zip
-    unzip -o -d  -p  /tmp/mongodb.zip &>>$LOG
+    unzip -o -d  /tmp   /tmp/mongodb.zip &>>$LOG
     Stat $?
   # cd mongodb-main
   #if [ "$1" == "/home/roboshop" ]; then
