@@ -18,7 +18,9 @@ Print  "Downloadi achive"
   Stat $?
 
 Print "Load Schema"
-cd /tmp/mongodb-main
+cd  /tmp/mongodb-main  &>>$LOG
+Stat  $?
+
 exit
 for db in catalogue users ; do
   mongo < $db.js &>>$LOG
