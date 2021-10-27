@@ -3,11 +3,11 @@
 source  Components/common.sh
 
 Print "Installing NodeJS "
- yum install nodejs make gcc-c++ -y >>$LOG
+ yum install nodejs make gcc -c++ -y  >>$LOG
  Stat $?
 
 Print "Adding a User"
-id roboshop >>$LOG
+id roboshop >> $LOG
 if [ $? -eq 0 ]
   then
       echo "User already exists">>$LOG
@@ -25,7 +25,8 @@ Stat $?
 
 Print "Extracting  Catalogue"
  unzip -s  -o -d /home/roboshop  /tmp/catalogue.zip >>$LOG
-
+ echo 'file unzipped'
+exit
  Print "Moving main Content "
  mv  /home/roboshop/catalogue-main  /home/roboshop/catalogue >>$LOG
  Stat $?
