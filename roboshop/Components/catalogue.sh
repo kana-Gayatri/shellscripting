@@ -26,7 +26,7 @@ Stat $?
 Print "Extracting  Catalogue"
  unzip -s  -o -d /home/roboshop  /tmp/catalogue.zip >>$LOG
  echo 'file unzipped'
-
+echo "--------------------------------------------file unzipped-------------------"
  Print "Moving main Content "
  mv  /home/roboshop/catalogue-main  /home/roboshop/catalogue >>$LOG
  Stat $?
