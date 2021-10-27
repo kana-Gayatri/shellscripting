@@ -25,11 +25,11 @@ Print  "Downloadi  MongoDB"
   # cd mongodb-main
   #if [ "$1" == "/home/roboshop" ]; then
     Print "Remove Old Content"
-    rm -rf /home/roboshop/mongodb
+    rm -rf /home/roboshop/mongodb &>>$LOG
     Stat $?
 
     Print "Copy Content"
-    mv /home/roboshop/mongodb-main /home/roboshop/mongdb
+    mv  /home/roboshop/mongodb-main /home/roboshop/mongdb &>>$LOG
     Stat $?
   #fi
 
