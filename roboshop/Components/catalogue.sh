@@ -53,7 +53,8 @@ Print "install Dependencies"
 #NOTE: We need to update the IP address of MONGODB Server in systemd.service file
 #Now, lets set up the service with systemctl.
 Print "Update DNSName "
-sed -e  -i "s/mongodb-DNSName/mongodb.roboshop.internal  /home/roboshop/catalogue/systemd.service " &>>$LOG
+ sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e /home/roboshop/${COMPONENT}/systemd.service   &>>$LOG
+#sed -e  -i "s/mongodb-DNSName/mongodb.roboshop.internal  /home/roboshop/catalogue/systemd.service " &>>$LOG
 Stat $?
 
 Print "Copy content"
