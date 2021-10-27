@@ -39,6 +39,7 @@ cd  /tmp/mongodb-main  &>>$LOG
 Stat  $?
    # mv  /home/roboshop/mongodb-main /home/roboshop/mongdb &>>$LOG
     #mv /home/roboshop/${COMPONENT}-main /home/roboshop/${COMPONENT}
-    Stat $?
- mongo < catalogue.js
- mongo < users.js
+ mongo < catalogue.js &>>$LOG
+ mongo < users.js&>>$LOG
+
+  Stat $?
