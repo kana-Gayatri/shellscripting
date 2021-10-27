@@ -25,11 +25,20 @@ Stat $?
 
 Print "Extracting  Catalogue"
  unzip -s  -o -d /home/roboshop  /tmp/catalogue.zip >>$LOG
- echo 'file unzipped'
-echo "--------------------------------------------file unzipped-------------------"
- Print "Moving main Content "
- mv  /home/roboshop/catalogue-main  /home/roboshop/catalogue >>$LOG
- Stat $?
+Stat $?
+
+# Print "Moving main Content "
+# mv  /home/roboshop/catalogue-main  /home/roboshop/catalogue >>$LOG
+ #Stat $?
+
+   if [ "$1" == "/home/roboshop" ]; then
+    Print "Remove Old Content"
+    rm -rf /home/roboshop/catalogue
+    Stat $?
+    Print "Copy Content"
+    mv /home/roboshop/catalogue-main /home/roboshop/catalogue
+    Stat $?
+  fi
 
 Print "install Dependencies"
  cd  /home/roboshop/catalogue
