@@ -24,7 +24,7 @@ rm -rf /home/roboshop/catalogue >>$LOG
 Stat $?
 
 Print "Extracting  Catalogue"
- unzip  -s -o -d /home/roboshop  /tmp/catalogue.zip &>>$LOG
+ unzip   -o -d /home/roboshop  /tmp/catalogue.zip &>>$LOG
   #unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
 Stat $?
 
@@ -53,7 +53,7 @@ Print "install Dependencies"
 #NOTE: We need to update the IP address of MONGODB Server in systemd.service file
 #Now, lets set up the service with systemctl.
 Print "Update DNSName "
-sed -i -e "s/MONGOD_DNSNAME /mongodb.roboshop.internal /home/roboshop/catalogue/systemd.service " &>>$LOG
+sed -i -e "s/ mongod_dnsname/mongodb.roboshop.internal  /home/roboshop/catalogue/systemd.service " &>>$LOG
 Stat $?
 
 Print "Copy content"
