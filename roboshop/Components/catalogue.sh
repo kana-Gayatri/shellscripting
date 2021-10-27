@@ -3,7 +3,7 @@
 source  Components/common.sh
 
 Print "Installing NodeJS "
- yum install nodejs make gcc -c++ -y  >>$LOG
+ yum install nodejs make gccc++ -y  >>$LOG
  Stat $?
 
 Print "Adding a User"
