@@ -24,22 +24,22 @@ rm -rf /home/roboshop/catalogue >>$LOG
 Stat $?
 
 Print "Extracting  Catalogue"
- unzip  -o -d /home/roboshop  /tmp/catalogue.zip >>$LOG
-  unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
+ unzip  -o -d /home/roboshop  /tmp/catalogue.zip &>>$LOG
+  #unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
 Stat $?
-echo "-------------------------extracted---------------"
+
 # Print "Moving main Content "
 # mv  /home/roboshop/catalogue-main  /home/roboshop/catalogue >>$LOG
  #Stat $?
 
-   if [ "$1" == "/home/roboshop" ]; then
+   #if [ "$1" == "/home/roboshop" ]; then
     Print "Remove Old Content"
     rm -rf /home/roboshop/catalogue
     Stat $?
     Print "Copy Content"
     mv /home/roboshop/catalogue-main /home/roboshop/catalogue
     Stat $?
-  fi
+  #fi
 
 Print "install Dependencies"
  cd  /home/roboshop/catalogue
@@ -47,13 +47,19 @@ Print "install Dependencies"
  Stat $?
 
  Print "App Permissions "
- chown -R roboshop:roboshop /home/roboshop
+ chown -R roboshop:roboshop /home/roboshop &>>$LOG
  Stat $?
 
 #NOTE: We need to update the IP address of MONGODB Server in systemd.service file
 #Now, lets set up the service with systemctl.
+Print "Update DNSName "
+sed -i -e "s\MONGOD_DNSNAME /mongodb.roboshop.internal /home/roboshop/catalogue/systemd.service " &>>$LOG
+Stat $?
 
-# mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
-# systemctl daemon-reload
-# systemctl start catalogue
-# systemctl enable catalogue
+Print "Copy content"
+ mv /home/roboshop/catalogue/systemd.service  /etc/systemd/system/catalogue.service &>>$LOG
+ Stat $?
+Print "Start System service"
+ systemctl daemon-reload
+ systemctl start catalogue
+ systemctl enable catalogue
