@@ -14,7 +14,8 @@ Print "Start Mongo Service"
   Stat $?
 
 Print  "Downloadi achive"
-# curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
+ curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"  &>>$LOG
+  Stat $?
 
 Print "Load Schema"
 cd /tmp/mongodb-main
