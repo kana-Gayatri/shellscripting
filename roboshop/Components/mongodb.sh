@@ -12,19 +12,26 @@ Print "Start Mongo Service"
   Print "Update MongoDB Config"
   sed -i -e 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>>$LOG
   Stat $?
+
+Print  "Downloadi achive"
+# curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
+
+Print "Load Schema"
+cd /tmp/mongodb-main
 exit
+for db in catalogue users ; do
+  mongo < $db.js &>>$LOG
+done
+Stat $?
+
 # systemctl enable mongod &>>$LOG
  #Stat $?
  #systemctl start mongod &>>$LOG
  #Stat $?
 
-Update Liste IP address from 127.0.0.1 to 0.0.0.0 in config file
-Config file: /etc/mongod.conf
-
-
 # systemctl restart mongod
 
-# curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
+
 
 # cd /tmp
 # unzip mongodb.zip
