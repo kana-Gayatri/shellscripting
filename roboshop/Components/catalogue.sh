@@ -24,7 +24,7 @@ rm -rf /home/roboshop/catalogue >>$LOG
 Stat $?
 
 Print "Extracting  Catalogue"
- unzip  -o -d /home/roboshop  /tmp/catalogue.zip &>>$LOG
+ unzip  -s -o -d /home/roboshop  /tmp/catalogue.zip &>>$LOG
   #unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
 Stat $?
 
@@ -34,16 +34,16 @@ Stat $?
 
    #if [ "$1" == "/home/roboshop" ]; then
     Print "Remove Old Content"
-    rm -rf /home/roboshop/catalogue
+    rm -rf /home/roboshop/catalogue &>>$LOG
     Stat $?
     Print "Copy Content"
-    mv /home/roboshop/catalogue-main /home/roboshop/catalogue
+    mv /home/roboshop/catalogue-main /home/roboshop/catalogue &>>$LOG
     Stat $?
   #fi
 
 Print "install Dependencies"
  cd  /home/roboshop/catalogue
- npm  --unsafe-perm install >>$LOG
+ npm  --unsafe-perm install &>>$LOG
  Stat $?
 
  Print "App Permissions "
