@@ -24,7 +24,8 @@ rm -rf /home/roboshop/catalogue >>$LOG
 Stat $?
 
 Print "Extracting  Catalogue"
- unzip -s  -o -d /home/roboshop  /tmp/catalogue.zip >>$LOG
+ unzip  -o -d /home/roboshop  /tmp/catalogue.zip >>$LOG
+  unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
 Stat $?
 echo "-------------------------extracted---------------"
 # Print "Moving main Content "
