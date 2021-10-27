@@ -11,7 +11,7 @@ CREATE()
     return
   fi
 }
-  Print "\e\nCreated $1 instance"
+  echo "\e\nCreated $1 instance"
 #COUNT=$(aws ec2 describe-instances --filters  "Name=tag:Name,Values=$1" | jq ".Reservations[].Instances[].PrivateIpAddress" | grep -v null  | wc -l)
 
 #if [ $COUNT -eq 0 ]
