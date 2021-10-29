@@ -9,7 +9,6 @@ CREATE() {
     echo -e "\e[1;33m$1 Instance already exists\e[0m"
     return
   fi
-
   sleep 5
 
   IP=$(aws ec2 describe-instances --filters  "Name=tag:Name,Values=$1" | jq ".Reservations[].Instances[].PrivateIpAddress" | grep -v null  | xargs)
