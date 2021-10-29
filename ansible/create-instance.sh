@@ -1,5 +1,4 @@
 #!/bin/bash
-
  COUNT=$(aws ec2 describe-instances --filters  "Name=tag:Name,Values=$1" | jq ".Reservations[].Instances[].PrivateIpAddress" | grep -v null  | wc -l )
 
 if [  $COUNT -eq 0 ] ; then
