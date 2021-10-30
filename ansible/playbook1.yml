@@ -1,8 +1,8 @@
-- name: Play1
-  hosts: all
-  tasks:
-  - name: print task1
-   ansible.builtin.debug:
-    msg: "Task1"
+- name: Playbook1
+hosts: all
+task:
+  -name : print task
+    ansible.builtin.debug:
+       msg : "task1"
 
-
+- name: Playbook2
