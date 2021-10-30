@@ -1,4 +1,10 @@
-- name: Frontend
- debug:
-    msg: frontend
+#- name: Frontend
+# debug:
+#    msg: frontend
 
+- name:Front end
+#
+#  tasks:
+#    - name: Access to URL in task 1
+      ansible.builtin.debug:
+        msg: URL in task 1 = {{URL}}
