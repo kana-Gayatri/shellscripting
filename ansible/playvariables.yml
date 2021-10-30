@@ -1,4 +1,4 @@
- - name: Play level variables
+- name: Play level variables
   hosts: all
   vars:
     URL: play.example.com
