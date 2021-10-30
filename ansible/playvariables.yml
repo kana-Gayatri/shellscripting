@@ -25,10 +25,10 @@
     ansible.builtin.debug:
       msg: URL = {{URL}}
 
-- name:  variable Precedency
+- name:  variable with Precedence
   hosts: all
-  vars: URL1 :  play.example.com
-  vars_files: playbook1.yml
+  #vars: URL1 :  play.example.com
+  #vars_files: playbook1.yml
   tasks:
   - name: Access URL
     ansible.builtin.debug:
