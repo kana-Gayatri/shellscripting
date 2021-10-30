@@ -10,10 +10,9 @@
       ansible.builtin.debug:
         msg: URL in task 2 = {{URL}}
 
-- name: File level variables
+- name: Play level variables
   hosts: all
   vars-files: -playbook1.yml
-
   tasks:
     - name: Access to URL
       ansible.builtin.debug:
