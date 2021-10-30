@@ -1,14 +1,14 @@
-#- name: Play level variables
-#  hosts: all
-#
-#  tasks:
-#    - name: Access to URL in task 1
-#      ansible.builtin.debug:
-#        msg: URL in task 1 = {{URL}}
-#
-#    - name: Access to URL in task 2
-#      ansible.builtin.debug:
-#        msg: URL in task 2 = {{URL}}
+- name: Play level variables
+  hosts: all
+
+  tasks:
+    - name: Access to URL in task 1
+      ansible.builtin.debug:
+        msg: URL in task 1 = {{URL}}
+
+    - name: Access to URL in task 2
+      ansible.builtin.debug:
+        msg: URL in task 2 = {{URL}}
 
 - name: file level variables
   hosts: all
@@ -18,7 +18,9 @@
     ansible.builtin.debug:
       msg: URL = {{URL}}
 
-
-#    - name: Access to URL in task 2
-#      ansible.builtin.debug:
-#        msg: URL in task 2 = {{URL}}
+- name: inventory  variables
+  hosts: all
+  tasks:
+  - name: Access URL
+    ansible.builtin.debug:
+      msg: URL = {{URL}}
