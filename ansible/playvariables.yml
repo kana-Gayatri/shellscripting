@@ -25,6 +25,7 @@
     ansible.builtin.debug:
       msg: URL1 = {{URL}}
 
+
 - name: variables with precedence
   hosts: all
   vars:URL1 :  play.example.com
