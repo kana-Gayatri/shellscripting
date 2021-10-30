@@ -27,7 +27,7 @@
 
 - name:  variable Precedency
   hosts: all
-  vars: URL1  = -play.example.com
+  vars: URL1  = play.example.com
   vars_files: -playbook1.yml
   tasks:
   - name: Access URL
