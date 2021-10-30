@@ -35,3 +35,4 @@
   - name: Access URL1
     ansible.builtin.debug:
       msg: URL1 = {{URL}}
+
