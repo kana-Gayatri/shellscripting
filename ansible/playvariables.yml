@@ -9,3 +9,16 @@
     - name: Access to URL in task 2
       ansible.builtin.debug:
         msg: URL in task 2 = {{URL}}
+
+- name: File level variables
+  hosts: all
+  vars-files: -playbook1.yml
+
+  tasks:
+    - name: Access to URL
+      ansible.builtin.debug:
+        msg: URL = {{URL}}
+
+#    - name: Access to URL in task 2
+#      ansible.builtin.debug:
+#        msg: URL in task 2 = {{URL}}
