@@ -1,8 +1,8 @@
--name: Play1
+- name: Play1
 hosts: all
 tasks:
-  -name: print task1
-  ansible.builtin.debug:
+  - name: print task1
+   ansible.builtin.debug:
     msg: "Task1"
 
 
