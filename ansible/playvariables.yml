@@ -23,13 +23,13 @@
   tasks:
   - name: Access URL
     ansible.builtin.debug:
-      msg: URL = {{URL}}
+      msg: URL1 = {{URL}}
 
 - name:  variable with Precedence
   hosts: all
-  #vars: URL1 :  play.example.com
+  vars: URL1 :  play.example.com
   #vars_files: playbook1.yml
   tasks:
-  - name: Access URL
+  - name: Access URL1
     ansible.builtin.debug:
-      msg: URL = {{URL}}
+      msg: URL1 = {{URL}}
