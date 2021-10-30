@@ -1,8 +1,8 @@
-group 1:
-  ip1
-  ip2
-group2:
-  ip3
-  ip4
+-name: Play1
+hosts: all
+tasks:
+  -name: print task1
+  ansible.builtin.debug:
+    msg: "Task1"
 
 
