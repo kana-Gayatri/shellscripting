@@ -1,7 +1,7 @@
 - name: Install
-   yum:
-      name= nginx
-     state= latest
+   ansible.debug.yum:
+            name: nginx
+            state: latest
 
 #  ansible.builtin.debug:
 #    msg: Frontend
