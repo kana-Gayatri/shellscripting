@@ -1,4 +1,11 @@
 
-- name: Print frontend
-     ansible.builtin.debug:
-        msg : frontend
+- name: Playbook1
+  hosts: frontend
+  tasks:
+    - name: print task 1
+      ansible.builtin.debug:
+        msg : "Task1"
+
+#- name: Print frontend
+#     ansible.builtin.debug:
+#        msg : frontend
