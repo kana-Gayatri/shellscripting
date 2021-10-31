@@ -1,3 +1,7 @@
-- name: Print frontend
-  ansible.builtin.debug:
-    msg: Frontend
+- name: Install
+   yum:
+      name= nginx
+     state= latest
+
+#  ansible.builtin.debug:
+#    msg: Frontend
