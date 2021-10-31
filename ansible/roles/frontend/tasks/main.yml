@@ -1,4 +1,5 @@
 
-- name: front end
-    ansible.builtin.debug:
-      msg: frontend
+- name: frontend
+
+      ansible.builtin.debug:
+        msg : frontend
