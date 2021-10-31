@@ -10,5 +10,5 @@
 
 - name: Include download task
   include_role:
-    name: common
-    tasks_from: download
+    name:  common
+    tasks_from:  download
