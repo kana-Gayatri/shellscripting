@@ -1,4 +1,3 @@
 - name: front end
-   ansible.built.debug:
+    ansible.builtin.debug:
       msg: frontend
-
