@@ -1,0 +1,5 @@
+- name: Download {{component}} Code
+  ansible.builtin.unarchive:
+    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
+    dest: /tmp
+    remote_sr c: yes
