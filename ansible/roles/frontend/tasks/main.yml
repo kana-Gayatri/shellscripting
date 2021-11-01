@@ -20,3 +20,13 @@
   ansible.builtin.file:
       path:  \usr\share\nginx\html
       state: absent
+
+#- name: Copy file with owner and permissions
+#  ansible.builtin.copy:
+#    src: /srv/myfiles/foo.conf
+#    dest: /etc/foo.conf
+- name: Copy the httdocs content
+   ansible.builtin.copy:
+     src: \tmp\frontend-main\static
+     dest:  \usr\share\nginx\html
+     remote_src: yes
