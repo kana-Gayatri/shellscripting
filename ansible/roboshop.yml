@@ -6,7 +6,8 @@
      - frontend
 
 - name: Setup mongodb
-  hosts: mongodb
+  hosts:  mongodb
   tags: mongodb
   roles:
      - mongodb
+
