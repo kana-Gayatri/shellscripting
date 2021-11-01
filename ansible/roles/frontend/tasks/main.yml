@@ -36,8 +36,16 @@
 #     src: \tmp\frontend-main\static
 #     dest:  \usr\share\nginx\html
 #     remote_src: yes
+
+#- name: restart nginx
+#  ansible.builtin.systemd:
+#      state: restarted
+#      name: nginx
+#      enabled: yes
+
+
 - name: restart nginx
   ansible.builtin.systemd:
-      state: restarted
-      name: nginx
-      enabled: yes
+    state: restarted
+    name: nginx
+    enabled: yes
