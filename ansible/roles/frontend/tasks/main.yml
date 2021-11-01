@@ -3,11 +3,7 @@
       name: nginx
       state: latest
 
-- name: restart nginx
-  ansible.builtin.systemd:
-      state: restarted
-      name: nginx
-      enabled: yes
+
 
 - name: Include download task
   include_role:
@@ -23,15 +19,15 @@
 
 - name: Copy  the httdocs content
   ansible.builtin.copy:
-    src: \tmp\frontend-main\static
-    dest: \usr\share\nginx\html
+    src: \tmp\frontend-main\static\
+    dest: \usr\share\nginx\html\
     remote_src: yes
 
-#- name:  Copy the httdocs content
-#  ansible.builtin.copy:
-#    src: \tmp\frontend-main\static
-#    dest: \usr\share\nginx\html
-#       remote_src: yes
+- name: Copy roboshop config file
+  ansible.builtin.copy:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
+    #remote_src: yes
 
 
 #- name: Copy the httdocs content
@@ -39,3 +35,8 @@
 #     src: \tmp\frontend-main\static
 #     dest:  \usr\share\nginx\html
 #     remote_src: yes
+- name: restart nginx
+  ansible.builtin.systemd:
+      state: restarted
+      name: nginx
+      enabled: yes
