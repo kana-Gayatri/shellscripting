@@ -2,6 +2,8 @@
 user.roboshop.internal
 [frontend]
 frontend.roboshop.internal
+[mongodb]
+mongodb.roboshop.internal
 [cart]
 cart.roboshop.internal
 [catalogue]
