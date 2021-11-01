@@ -35,12 +35,6 @@
     #remote_src: yes
 
 
-#- name: Copy the httdocs content
-#   ansible.builtin.copy:
-#     src: \tmp\frontend-main\static
-#     dest:  \usr\share\nginx\html
-#     remote_src: yes
-
 #- name: restart nginx
 #  ansible.builtin.systemd:
 #      state: restarted
@@ -48,10 +42,8 @@
 #      enabled: yes
 
 
-- name: restart nginx service
-#   ansible.builtin.debug:
-#      msg: print restarting service
-  ansible.builtin.systemd:
-    state: restarted
-    name: nginx
-    enabled: yes
+#- name: restart nginx service
+#  ansible.builtin.systemd:
+#    state: restarted
+#    name: nginx
+#    enabled: yes
