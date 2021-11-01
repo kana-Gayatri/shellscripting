@@ -45,8 +45,8 @@
 
 
 - name: restart nginx service
-   ansible.builtin.debug:
-      msg: print restarting service
+#   ansible.builtin.debug:
+#      msg: print restarting service
   ansible.builtin.systemd:
     state: restarted
     name: nginx
