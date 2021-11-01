@@ -1,10 +1,12 @@
 ---
 - name: Setup Frontend
   hosts: frontend
+  tags: frontend
   roles:
      - frontend
 
-#- name: Setup mongodb
-#  hosts: mongodb
-#  roles:
-#     - mongodb
+- name: Setup mongodb
+  hosts: mongodb
+  tags: mongodb
+  roles:
+     - mongodb
