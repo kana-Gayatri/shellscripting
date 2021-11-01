@@ -5,5 +5,4 @@ MSPACE=$(cat $0 | grep Print | awk -F '"' '{print $2}' | awk '{ print length }' 
 
 COMPONENT_NAME=Payment
 COMPONENT=payment
-
 PYTHON
