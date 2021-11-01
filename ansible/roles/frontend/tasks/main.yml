@@ -3,22 +3,18 @@
       name: nginx
       state: latest
 
-- name: Include download task
-  include_role:
-    name:  common
-    tasks_from:  download
-
 - name: start nginx
   ansible.builtin.systemd:
     name: nginx
     state: restarted
     enabled: yes
 
--
+- name: Include download task
+  include_role:
+    name:  common
+    tasks_from:  download
 
 - name:  Remove Old Content
-# ansible.builtin.systemd:
-#      state: restarted
   ansible.builtin.file:
       path:  \usr\share\nginx\html
       state: absent
