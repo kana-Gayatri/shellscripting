@@ -3,7 +3,11 @@
       name: nginx
       state: latest
 
-
+- name: restart nginx service
+   ansible.builtin.systemd:
+    state: restarted
+    name: nginx
+    enabled: yes
 
 - name: Include download task
   include_role:
