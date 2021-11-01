@@ -1,5 +1,4 @@
-##!/bin/bash
-#
+#!/bin/bash
 # COUNT=$(aws ec2 describe-instances --filters  "Name=tag:Name,Values=$1" | jq ".Reservations[].Instances[].PrivateIpAddress" | grep -v null  | wc -l )
 #
 #if [  $COUNT -eq 0 ] ; then
@@ -14,8 +13,6 @@
 #  aws route53 change-resource-record-sets --hosted-zone-id Z021234083EL1N0CXFXW --change-batch file:///tmp/record.json | jq  &>/dev/null
 
 
-
-#!/bin/bash
 
 CREATE() {
    COUNT=$(aws ec2 describe-instances --filters  "Name=tag:Name,Values=$1" | jq ".Reservations[].Instances[].PrivateIpAddress" | grep -v null  | wc -l )
