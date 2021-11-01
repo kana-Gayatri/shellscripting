@@ -20,8 +20,8 @@
 - name: Copy  the httdocs content
   ansible.builtin.copy:
     #/tmp/frontend-main/static
-    src: /tmp/frontend-main/static
-    dest: \usr\share\nginx\html\
+    src: /tmp/frontend-main/static/
+    dest: /usr/share/nginx/html/
     remote_src: yes
 
 - name: Copy roboshop config file
