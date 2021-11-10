@@ -25,7 +25,6 @@ resource "aws_route53_record" "records" {
   allow_overwrite = true
 }
 
-
 resource "null_resource" "ansible" {
   depends_on = [aws_route53_record.records]
   provisioner "remote-exec" {
