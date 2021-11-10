@@ -14,6 +14,35 @@ resource "aws_ec2_tag" "tags" {
   key         = "Name"
   value  = element(var.components, count.index )
 }
+
+resource "aws_route53_record" "records" {
+  count           = length(var.components)
+  zone_id         = "Z021234083EL1N0CXFXW"
+  name            = "${element(var.components, count.index)}-dev.roboshop.internal"
+  type            = "A"
+  ttl             = "300"
+  records         = [element(aws_spot_instance_request.cheap_worker.*.private_ip, count.index)]
+  allow_overwrite = true
+}
+
+
+resource "null_resource" "ansible" {
+  depends_on = [aws_route53_record.records]
+  provisioner "remote-exec" {
+    count  = length(var.components)
+    connection {
+      host =elements(aws_spot_instance_request.cheap_worker .*. private_ip, count.index)
+      user = "centos"
+      password = "DevOps321"
+    }
+    inline = [
+      "sudo yum install python3-pip -y",
+      "sudo pip3 install pip --upgrade",
+      "sudo pip3 install ansible",
+      "ansible-pull -U https://DevOps-Batches@dev.azure.com/DevOps-Batches/DevOps60/_git/ansible roboshop-pull.yml -e COMPONENT=${element(var.components, count.index)} -e ENV=dev"
+    ]
+  }
+}
 data "aws_ami" "ami" {
   most_recent = true
   name_regex  = "^cent*"
