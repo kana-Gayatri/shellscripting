@@ -16,6 +16,8 @@ git-pull:
 
 cart: git-pull ## Setup Cart Component
 	@sudo bash Components/cart.sh
+	@echo  pulling cart code
+
 
 catalogue: git-pull ## Setup Catalogue Component
 	@sudo bash Components/catalogue.sh
