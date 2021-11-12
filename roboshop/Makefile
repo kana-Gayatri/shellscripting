@@ -10,36 +10,36 @@ help:
         done
 
 git-pull:
-	@echo -------+      Pulling Git Code      +--------
+	@echo -------+ Pulling Git Code +--------
 	@git pull &>/dev/null
 
+cart: git-pull ## Setup Cart Component
+	@sudo bash components/cart.sh
 
-cart :  ## Setup Cart Component
-	git-pull @sudo bash Components/cart.sh
+catalogue: git-pull ## Setup Catalogue Component
+	@sudo bash components/catalogue.sh
 
-catalogue : git-pull# Setup Catalogue component
-	@sudo bash Components/catalogue.sh
+user: git-pull ## Setup User Component
+	@sudo bash components/user.sh
 
-user:  git-pull ## Setup User component
-	@sudo bash Components/user.sh
+shipping: git-pull ## Setup shipping Component
+	@sudo bash components/shipping.sh
 
-shipping:  git-pull ## Setup Shipping Component
-	@sudo bash Components/shipping.sh
+payment: git-pull ## Setup Payment Component
+	@sudo bash components/payment.sh
 
-payment:  git-pull ## Setup Payment Component
-	@sudo bash Components/payment.sh
+frontend: git-pull ## Setup Frontend Component
+	@sudo bash components/frontend.sh
 
-frontend:  git-pull ## Setup frontend Component
-	@sudo bash	Components/frontend.sh
+mysql: git-pull ## Setup Mysql Component
+	@sudo bash components/mysql.sh
 
-mysql:  git-pull ## Setup mysql Component
-	@sudo bash Components/mysql.sh
+redis: git-pull ## Setup Redis Component
+	@sudo bash components/redis.sh
 
-redis:  git-pull ## Setup redis Component
-	@sudo bash	Components/redis.sh
+rabbitmq: git-pull ## Setup Rabbitmq Component
+	@sudo bash components/rabbitmq.sh
 
-rabbitmq:  git-pull ## Setup rabbitmq Component
-	@sudo bash	Compnents/rabbitmq.sh
+mongodb: git-pull ## Setup Mongodb Component
+	@sudo bash components/mongodb.sh
 
-mongodb: git-pull ## Setup mongodb component
-	@sudo bash Components/mongodb.sh
