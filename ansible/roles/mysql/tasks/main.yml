@@ -41,6 +41,7 @@
   ansible.builtin.shell: mysql --connect-expired-password -uroot -p"{{DEFAULT_PASSWORD.stdout}}" </tmp/pass.sql
   when: check_new_password.failed
 
+
 - name: Download Schema
   include_role:
     name: common
