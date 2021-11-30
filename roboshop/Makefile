@@ -9,36 +9,43 @@ help:
             printf "%-15s %s\n" $$help_command $$help_info ; \
         done
 
+
 git-pull:
-	@echo -------+      Pulling Git Code      +--------
-	@git pull &>/dev/null
+	@echo -------+ Pulling Git Code +--------
+	@git pull &>/dev/null ;
 
-cart :  ## Setup Cart Component
-	git-pull @sudo bash Components/cart.sh
+frontend: git-pull ## Setup frontend Component
+	@sudo bash Components/frontend.sh
 
-catalogue : git-pull# Setup Catalogue component
-	@sudo bash Components/catalogue.sh
 
-user:  git-pull ## Setup User component
-	@sudo bash Components/user.sh
-
-shipping:  git-pull ## Setup Shipping Component
-	@sudo bash Components/shipping.sh
-
-payment:  git-pull ## Setup Payment Component
-	@sudo bash Components/payment.sh
-
-frontend:  git-pull ## Setup frontend Component
-	@sudo bash	Components/frontend.sh
-
-mysql:  git-pull ## Setup mysql Component
-	@sudo bash Components/mysql.sh
-
-redis:  git-pull ## Setup redis Component
-	@sudo bash	Components/redis.sh
-
-rabbitmq:  git-pull ## Setup rabbitmq Component
-	@sudo bash	Compnents/rabbitmq.sh
-
-mongodb: git-pull ## Setup mongodb component
-	@sudo bash Components/mongodb.sh
+#cart: git-pull ## Setup Cart Component
+#	@sudo bash Components/cart.sh
+#
+#
+#catalogue: git-pull ## Setup Catalogue Component
+#	@sudo bash Components/catalogue.sh
+#
+#user: git-pull ## Setup User Component
+#	@sudo bash Components/user.sh
+#
+#shipping: git-pull ## Setup shipping Component
+#	@sudo bash Components/shipping.sh
+#
+#payment: git-pull ## Setup Payment Component
+#	@sudo bash Components/payment.sh
+#
+#frontend: git-pull ## Setup Frontend Component
+#	@sudo bash Components/frontend.sh
+#
+#mysql: git-pull ## Setup Mysql Component
+#	@sudo bash Components/mysql.sh
+#
+#redis: git-pull ## Setup Redis Component
+#	@sudo bash Components/redis.sh
+#
+#rabbitmq: git-pull ## Setup Rabbitmq Component
+#	@sudo bash Components/rabbitmq.sh
+#
+#mongodb: git-pull ## Setup Mongodb Component
+#	@sudo bash Components/mongodb.sh
+#

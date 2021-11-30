@@ -2,5 +2,15 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Test_jenkins" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cart" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/catalogue" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jenkins" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/payment" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/roboshopd/roboshop/frontend" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/shellscripting" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/shipping" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/terraform-mutable" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/user" vcs="Git" />
   </component>
 </project>

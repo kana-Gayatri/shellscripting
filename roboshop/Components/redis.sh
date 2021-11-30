@@ -27,7 +27,7 @@
 
 #!/bin/bash
 
-source components/common.sh
+source Components/common.sh
 MSPACE=$(cat $0 | grep ^Print | awk -F '"' '{print $2}' | awk '{ print length }' | sort | tail -1)
 
 Print "Install Redis Repos"

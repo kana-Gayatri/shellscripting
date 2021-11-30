@@ -1,7 +1,7 @@
-- name: Install Nginx
-  yum:
-    name: nginx
-    state: latest
+- name: Install
+  ansible.builtin.yum:
+      name: nginx
+      state: latest
 
 - name: Download code
   include_role:
@@ -10,21 +10,30 @@
   vars:
     APP_LOCATION: /usr/share/nginx/html/
 
-- name: Copy the Htdocs content
+
+- name: Copy  the httdocs content
   ansible.builtin.copy:
+    #/tmp/frontend-main/static
     src: /tmp/frontend-main/static/
     dest: /usr/share/nginx/html/
     remote_src: yes
   when: APP_VERSION is not defined
 
-- name: Copy RoboShop Config file
+- name: Copy roboshop config file
   ansible.builtin.template:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
+    #remote_src: yes
+
+
+# name:  Remove Old Content
+#  ansible.builtin.file:
+#      path:  \usr\share\nginx\html
+#      state: absent
+
 
 - name: Start Nginx Service
   ansible.builtin.systemd:
     state: restarted
     name: nginx
     enabled: yes
-
