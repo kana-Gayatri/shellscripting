@@ -4,23 +4,10 @@
   when: APP_TYPE == "backend"
   register: app_user_info
 
-- name: Download {{COMPONENT}} Code
-  ansible.builtin.unarchive:
-    src: https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip
-    dest: /tmp
-    remote_src: yes
+- name: Include Dowload from GitHub
+  include_tasks: download-from-github.yml
+  when: APP_VERSION is not defined
 
-- name: Remove existing code
-  ansible.builtin.file:
-    path: "{{APP_LOCATION}}"
-    state: absent
-  when: APP_TYPE == "frontend" or APP_TYPE == "backend"
-
-- name: Copy App Code
-  copy:
-    src: /tmp/{{COMPONENT}}-main/
-    dest: "{{APP_LOCATION}}"
-    remote_src: true
-  become_user: "{{APP_USER}}"
-  when: APP_TYPE == "backend"
-
+- name: Include Dowload from Nexus
+  include_tasks: download-from-nexus.yml
+  when: APP_VERSION is defined
