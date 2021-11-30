@@ -1,4 +1,11 @@
-- name: Add roboshop app user
+
+#    - name:  Download {{COMPONENT}} Code
+#      ansible.builtin.unarchive:
+#        src: https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip
+#        dest: /tmp
+#        remote_src: yes
+
+
   ansible.builtin.user:
     name: roboshop
   when: APP_TYPE == "backend"
@@ -23,4 +30,3 @@
     remote_src: true
   become_user: "{{APP_USER}}"
   when: APP_TYPE == "backend"
-
