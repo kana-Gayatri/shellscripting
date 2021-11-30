@@ -6,6 +6,5 @@ Environment=REDIS_HOST=redis-{{ENV}}.roboshop.internal
 Environment=CATALOGUE_HOST=catalogue-{{ENV}}.roboshop.internal
 ExecStart=/bin/node /home/roboshop/cart/server.js
 SyslogIdentifier=cart
-
 [Install]
 WantedBy=multi-user.target
