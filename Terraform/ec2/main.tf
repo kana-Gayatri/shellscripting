@@ -3,8 +3,7 @@ resource "aws_instance" "sample" {
   ami                    = data.aws_ami.example.id
   instance_type          = var.instance_type == "" ? "t3.micro" : var.instance_type
   vpc_security_group_ids = [var.SGID]
-
-  tags = {
+ tags = {
     Name = local.NAME
   }
 }
