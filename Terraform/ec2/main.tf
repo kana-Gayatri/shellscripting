@@ -36,7 +36,6 @@ data "aws_ami" "example" {
   name_regex  = "^Ubuntu*"
   owners      = ["973714476881"]
 }
-
 locals {
   NAME = "${var.env}-instance"
 }
